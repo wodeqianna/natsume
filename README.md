@@ -4,13 +4,24 @@
 2. 通过大白菜制作Ubuntu启动盘
 3. 自定义安装Ubuntu系统，释放硬盘空间，在释放的空间中安装Ubuntu。
 4. 更新本系统的源
+    sodu apt-get update
 5. 安装vim
+    sudo apt-get install vim-gtk
 6. 更新源（网易 阿里等）
+    $sudo gedit /etc/apt/sources.list
+    复制粘贴新的源
+    sodu apt-get update
 ##安装所需软件
 1. 安装VScode编译器
+    安装js--->sudo apt install nodejs-legacy
+    node -v //检查是否安装成功 
 2. 注册GitHub账号，并建立库
 3. 将VScode与GitHub互联，实现本地库文件上传
+安装get---> sudo apt-get install git
+git config --global user.name "你的github用户名"
+git config --global user.email "你的github邮箱地址"
 4. 在VScode上安装Markdown插件
+在扩展上下载 Markdown Preview Enhanced
 ##英语学习
 1. 安装英语流利说APP
 2. 通过英语流利说学习英语，每天至少5分钟
@@ -67,5 +78,18 @@
     var first=cat.name;
 *   如果访问的属性名称有空格，这时只能用中括号操作符([])。
     var first=cat["legs a"];
-    
+
+*   中括号操作符的另一个使用方式是用变量来访问一个属性，当你需要遍历对象的属性列表或查表时，这种方式极为有用。
+    var testobj={
+        12:"Namath";
+        16:"Montana";
+        19:"Vnitas";
+    };
+    var playNumber=16;
+    var player=testobj[playNumber];
+*   使用rondom()生成随机小数
+    Math.rondom()用来生成一个在0-1(不包括1)之间的随机数.因此Math.rondom()可能返回0但绝对不会返回1。
+    例:生成一个0-9之间的随机整数
+    return Math.floor(Math.random()*10);
+    4. 基本算法
         
