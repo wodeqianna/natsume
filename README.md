@@ -1,8 +1,8 @@
-#泥巴实习总结1.0 
-##Linux环境搭建
+# 泥巴实习总结1.0 
+## Linux环境搭建
 1. 下载Ubuntu ISO文件
 2. 通过大白菜制作Ubuntu启动盘
-3. 自定义安装Ubuntu系统，释放硬盘空间，在释放的空间中安装Ubuntu。
+3. 自定义安装Ub  untu系统，释放硬盘空间，在释放的空间中安装Ubuntu。
 4. 更新本系统的源
     sodu apt-get update
 5. 安装vim
@@ -11,7 +11,7 @@
     $sudo gedit /etc/apt/sources.list
     复制粘贴新的源
     sodu apt-get update
-##安装所需软件
+## 安装所需软件
 1. 安装VScode编译器
     安装js--->sudo apt install nodejs-legacy
     node -v //检查是否安装成功 
@@ -22,11 +22,11 @@ git config --global user.name "你的github用户名"
 git config --global user.email "你的github邮箱地址"
 4. 在VScode上安装Markdown插件
 在扩展上下载 Markdown Preview Enhanced
-##英语学习
+## 英语学习
 1. 安装英语流利说APP
 2. 通过英语流利说学习英语，每天至少5分钟
 3. 每天学习完成后进行打卡
-##编程学习
+## 编程学习
 1. HTML+CSS
 *   CSS边框属性 style、color、width
 *   应用多个class到一个元素，只需要在多个class之间用空格分开
