@@ -1,8 +1,9 @@
 # 泥巴实习总结1.0 
+| 作者：Natsume   2017年10月
 ## Linux环境搭建
 1. 下载Ubuntu ISO文件
 2. 通过大白菜制作Ubuntu启动盘
-3. 自定义安装Ub  untu系统，释放硬盘空间，在释放的空间中安装Ubuntu。
+3. 自定义安装Ubuntu系统，释放硬盘空间，在释放的空间中安装Ubuntu。
 4. 更新本系统的源
     sodu apt-get update
 5. 安装vim
@@ -303,3 +304,4 @@ function bouncer(arr) {
     }
 bouncer([7, "ate", "", false, 9]);
 ```
+Natsume
