@@ -32,7 +32,7 @@ git config --global user.email "你的github邮箱地址"
 *   应用多个class到一个元素，只需要在多个class之间用空格分开
 *   border-radius:50% //改变边框为圆角
 *   使用html5技术把表单设置为必填
-    <input type="text" required>
+    ```<input type="text" required>```
 *   css处理样式覆盖
     body ---> class1 ---> class2 ---> ID ---> 内联样式 ---> Important
 *   RGB具有与十六进制代码完全相同数量的可能值
@@ -56,10 +56,13 @@ git config --global user.email "你的github邮箱地址"
 *   与字符串数据不可变不同，数组的数据是可以改变的，并可以自由改变--使用索引修改数据组中的数据
 3. JavaScript函数定义
 *   把代码重复的部分抽取出来，放到一个函数function中。
-    例：function myFunction(){
-        console.log("Hi World");
+    例：
+    ```
+    function myFunction(){
+    console.log("Hi World");
     }
     myFunction();
+    ```
     result--->Hi World
 *   作用域影响着变量的作用范围，在函数外定义的变量具有全局作用域。具有全局作用域的变量可以在代码的任何地方被调用。
     没有使用var关键字的变量，会被自动创建在全局变量作用域中，变成全局变量。
@@ -91,5 +94,212 @@ git config --global user.email "你的github邮箱地址"
     Math.rondom()用来生成一个在0-1(不包括1)之间的随机数.因此Math.rondom()可能返回0但绝对不会返回1。
     例:生成一个0-9之间的随机整数
     return Math.floor(Math.random()*10);
-    4. 基本算法
-        
+ 4. 基本算法
+*   翻转字符串算法挑战
+方法一
+使用split()将字符串分割成数组
+使用reverse()将数组进行翻转
+使用join()将数组转化为字符串
+ ```
+function reverseString(str) {
+var new1=str.split('');
+var new2=new1.reverse();
+var new3=new2.join('');
+return new3;
+}
+reverseString("hello");
+ ```
+方法二
+将字符串进行反向遍历
+ ```
+function reverseString(str) {
+var new1="";
+for (var i = str.length-1; i>=0 ; i--) {
+    new1+=str[i];
+}
+return new1;
+}
+reverseString("hello");
+ ```
+*   阶乘算法挑战
+方法一
+使用for循环进行阶乘
+ ```
+function factorialize(num) {
+    var sum=1;
+    for (var i = num; i>0 ; i--) {
+        sum*=i;
+    }
+return sum;
+}
+factorialize(5);
+ ```
+*   回文算法挑战
+方法一
+使用toLowerCase()将字符串转化为小写
+正则表达式 
+\W表示：元字符用于查找非单词字符
+var reg=/[\W\_]/g;
+使用replace()替换与正则表达式匹配的子串
+ ```
+function palindrome(str) {
+var str1=str.toLowerCase();
+var reg=/[\W\_]/g;
+var str2=str1.replace(reg,"");
+var str3=str2.split("");
+var str4=str3.reverse();
+var str5=str4.join("");
+return str2 === str5;
+}
+palindrome("eye");
+ ```
+* 寻找最长的单词算法挑战
+利用split()方法将字符串分成每个单词组成的数组，取得其中最长的长度
+ ```
+function findLongestWord(str){
+var max = 0;
+var arr = str.split(' ');
+for(var i=0;i<arr.length;i++){
+max = arr[i].length>max?arr[i].length:max;
+}
+return max;
+}
+findLongestWord("The quick brown fox jumped over the lazy dog");
+ ```
+*   设置首字母大写算法挑战
+toUpperCase() 方法用于把字符串转换为大写。
+slice() 方法可从已有的数组中返回选定的元素。
+ ```
+function titleCase(str) {
+    var arr,upChar;
+    str = str.toLowerCase();
+    arr = str.split(' ');
+    for(var i=0;i<arr.length;i++){
+        upChar =  arr[i][0].toUpperCase();
+        arr[i] = upChar + arr[i].slice(1);
+    }
+    arr = arr.join(' ');
+    return arr;
+} 
+```
+*   寻找数组中的最大值算法挑战
+使用到了二维数组的遍历
+ ```
+ function largestOfFour(arr) {
+    var one=[0,0,0,0];  
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr[i].length; j++) {
+            if (one[i]<arr[i][j]) {
+                 one[i]=arr[i][j]
+            }
+        }
+    }
+return one;
+}
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]); 
+```
+*   确认末尾字符算法挑战
+检查一个字符串(str)是否以指定的字符串(target)结尾。
+如果是，返回true;如果不是，返回falsev.
+```
+function confirmEnding(str, target) {
+    var alen=str.substr(-target.length);
+    if (alen==target) {
+        return true;
+    }else{
+        return false;
+    }
+}
+confirmEnding("He has to give me a new name", "name");
+
+```
+*   重复操作算法挑战
+重复一个指定的字符串 num次，如果num是一个负数则返回一个空字符串
+```
+function repeat(str, num) {
+    var result = '';
+    if(num<0){
+        return '';
+    }else{
+    for(var i=0;i<num;i++){
+        result += str;
+            }
+    }
+return result;
+}
+```
+*   字符串截取算法挑战
+```
+function truncate(str, num) {
+    var result;
+            if(num<=3){
+                result = str.slice(0,num) +'...';
+            }else if(str.length>num){
+                result = str.slice(0,num-3) + '...';
+            }else{
+                result = str;
+            }
+            return result;
+        }
+truncate("A-tisket a-tasket A green and yellow basket", 11);
+```
+*   数组分割算法挑战
+push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度
+```
+function chunk(arr, size) {
+    var result=[];
+    var a=[];
+    for (var i = 0; i < arr.length; i++) {
+        a.push(arr[i]);
+        if (((i+1)%size==0||i==arr.length-1)) {
+            result.push(a);
+           a=[]; 
+        }
+    }
+    return result;
+        }
+chunk(["a", "b", "c", "d"], 2);
+
+```
+*   数组截断算法挑战
+返回一个数组被截断n个元素后还剩余的元素，截断从索引0开始
+同样用到push() 方法
+
+```
+function slasher(arr, howMany) {
+var result=[];
+for (var i = howMany; i < arr.length; i++) {
+    result.push(arr[i]);
+}
+return result;
+}
+slasher([1, 2, 3,4], 2);
+```
+*   数组查询算法
+indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置
+```
+function mutation(arr) {
+    var arr1 = arr[0].toLowerCase();
+    var arr2 = arr[1].toLowerCase();
+    for(var i=0;i<arr[1].length;i++){
+        if(arr1.indexOf(arr2[i]) == -1){
+            return false;
+        }
+    }
+    return true;
+}
+mutation(["hello", "hey"]);
+```
+*   删除数组中特定值算法挑战
+```
+function bouncer(arr) {
+        for(var i=0;i<arr.length;i++){
+            if(!arr[i] == true){
+                arr.splice(i,1);
+                i--;
+            }
+        }
+        return arr;
+    }
+bouncer([7, "ate", "", false, 9]);
+```
